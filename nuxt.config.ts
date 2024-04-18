@@ -17,4 +17,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  app: {
+    head: {
+      bodyAttrs: {
+        class: 'bg-neutral-200',
+      },
+    },
+  },
 });
