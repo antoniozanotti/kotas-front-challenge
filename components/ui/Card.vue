@@ -2,7 +2,7 @@
 export type Variant = "primary" | "secondary";
 
 export interface CardProps {
-  variant: Variant;
+  variant?: Variant;
 }
 
 const props = withDefaults(defineProps<CardProps>(), {
