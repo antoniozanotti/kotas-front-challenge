@@ -38,13 +38,7 @@ yarn install
 bun install
 ```
 
-4. Crie um arquivo .env com base no arquivo .env.example
-
-```bash
-cp .env.example .env
-```
-
-5. Você já tem tudo pronto para iniciar o servidor localmente `http://localhost:3000`
+4. Você já tem tudo pronto para iniciar o servidor localmente `http://localhost:3000`
 
 ```bash
 # npm

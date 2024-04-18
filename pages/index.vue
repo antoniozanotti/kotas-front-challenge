@@ -1,4 +1,30 @@
 <script lang="ts" setup>
+import { useInfiniteQuery } from "@tanstack/vue-query";
+
+const initialFetchUrl = "https://pokeapi.co/api/v2/pokemon/?limit=24";
+
+const fetchPage = async (pageParam = 0) => {
+  let fetchUrl = pageParam === 0 ? initialFetchUrl : pageParam.toString();
+  const res = await fetch(fetchUrl);
+  return res.json();
+};
+
+const {
+  data,
+  fetchNextPage,
+  hasNextPage,
+  isFetching,
+  isFetchingNextPage,
+  isPending,
+} = useInfiniteQuery({
+  queryKey: ["pokemons"],
+  queryFn: ({ pageParam }) => fetchPage(pageParam),
+  initialPageParam: 0,
+  getNextPageParam: (lastPage) => {
+    return lastPage.next;
+  },
+});
+
 const searchValue = ref("");
 </script>
 
@@ -18,12 +44,27 @@ const searchValue = ref("");
     >
       Pokémons
     </h1>
-    <UiGrid>
-      <PagesListingPokemonCard
-        v-for="item in [...Array(24).keys()]"
-        :pokemon="{ id: 4, name: 'Charmander', types: ['fire', 'water'] }"
-      />
-    </UiGrid>
+    <span v-if="isPending"></span>
+    <div v-else-if="data">
+      <span v-if="isFetching && !isFetchingNextPage"></span>
+      <UiGrid>
+        <template v-for="(group, index) in data.pages" :key="index">
+          <PagesListingPokemonCard
+            v-for="pokemon in group.results"
+            :key="pokemon.name"
+            :name="pokemon.name"
+          />
+        </template>
+      </UiGrid>
+      <button
+        @click="() => fetchNextPage()"
+        :disabled="!hasNextPage || isFetchingNextPage"
+      >
+        <span v-if="isFetchingNextPage">Carregando mais...</span>
+        <span v-else-if="hasNextPage">Carregar Mais</span>
+        <span v-else>Nada mais para carregar</span>
+      </button>
+    </div>
   </div>
   <UiScroll />
 </template>
