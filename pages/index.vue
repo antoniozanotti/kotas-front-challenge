@@ -1,14 +1,4 @@
 <script lang="ts" setup>
-import { useInfiniteQuery } from "@tanstack/vue-query";
-
-const initialFetchUrl = "https://pokeapi.co/api/v2/pokemon/?limit=24";
-
-const fetchPage = async (pageParam = 0) => {
-  let fetchUrl = pageParam === 0 ? initialFetchUrl : pageParam.toString();
-  const res = await fetch(fetchUrl);
-  return res.json();
-};
-
 const {
   data,
   fetchNextPage,
@@ -16,15 +6,7 @@ const {
   isFetching,
   isFetchingNextPage,
   isPending,
-} = useInfiniteQuery({
-  queryKey: ["pokemons"],
-  queryFn: ({ pageParam }) => fetchPage(pageParam),
-  initialPageParam: 0,
-  getNextPageParam: (lastPage) => {
-    return lastPage.next;
-  },
-});
-
+} = usePokemonsInfiniteQuery();
 const searchValue = ref("");
 </script>
 

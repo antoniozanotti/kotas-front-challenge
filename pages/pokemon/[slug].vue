@@ -1,20 +1,9 @@
 <script lang="ts" setup>
-import { useQuery } from "@tanstack/vue-query";
-
-const fetchPokemon = async (name: string) => {
-  let fetchUrl = `https://pokeapi.co/api/v2/pokemon/${name}`;
-  const res = await fetch(fetchUrl);
-  return res.json();
-};
-
 const route = useRoute();
 const pokemonName = route.params.slug.toString();
-
-const { isPending, data } = useQuery({
-  queryKey: ["pokemon", pokemonName],
-  queryFn: () => fetchPokemon(pokemonName),
-});
+const { isPending, data } = usePokemonByNameQuery(pokemonName);
 </script>
+
 <template>
   <div class="md:w-[541px] mx-auto">
     <span v-if="isPending"></span>

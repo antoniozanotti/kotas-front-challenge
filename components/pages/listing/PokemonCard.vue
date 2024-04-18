@@ -1,22 +1,9 @@
 <script lang="ts" setup>
-import { useQuery } from "@tanstack/vue-query";
-
 export interface PokemonCardProps {
   name: string;
 }
-
 const props = withDefaults(defineProps<PokemonCardProps>(), {});
-
-const fetchPokemon = async (name: string) => {
-  let fetchUrl = `https://pokeapi.co/api/v2/pokemon/${name}`;
-  const res = await fetch(fetchUrl);
-  return res.json();
-};
-
-const { isPending, data } = useQuery({
-  queryKey: ["pokemon", props.name],
-  queryFn: () => fetchPokemon(props.name),
-});
+const { isPending, data } = usePokemonByNameQuery(props.name);
 </script>
 
 <template>
