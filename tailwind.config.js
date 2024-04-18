@@ -11,6 +11,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': "#C1BEBE"
+      },
       fontFamily: {
         'sans': ['Mulish', ...defaultTheme.fontFamily.sans],
         'primary': ['Mulish'],
