@@ -2,7 +2,7 @@
 
 Esse é um projeto de desafio para [Coodesh](https://coodesh.com/). Lendo os requisitos e critérios de avaliação cheguei ao resultado final que é este repositório.
 
-**Disponível em**: [https://kotas-front-challenge.netlify.app](https://kotas-front-challenge.netlify.app)
+**Disponível em**: [https://kotas-front-challenge.vercel.app/](https://kotas-front-challenge.vercel.app/)
 
 **Figma Design File**: a construção do projeto seguiu o arquivo de design /design/figma.fig concedido pela Coodesh.
 
