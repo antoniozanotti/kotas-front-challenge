@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const searchValue = ref("");
 const {
   data,
   fetchNextPage,
@@ -6,8 +7,7 @@ const {
   isFetching,
   isFetchingNextPage,
   isPending,
-} = usePokemonsInfiniteQuery();
-const searchValue = ref("");
+} = usePokemonsInfiniteQuery(searchValue);
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const searchValue = ref("");
       <UiGrid>
         <template v-for="(group, index) in data.pages" :key="index">
           <PagesListingPokemonCard
-            v-for="pokemon in group.results"
+            v-for="pokemon in (group.results ?? [group])"
             :key="pokemon.name"
             :name="pokemon.name"
           />
@@ -44,7 +44,7 @@ const searchValue = ref("");
       >
         <span v-if="isFetchingNextPage">Carregando mais...</span>
         <span v-else-if="hasNextPage">Carregar Mais</span>
-        <span v-else>Nada mais para carregar</span>
+        <span v-else></span>
       </button>
     </div>
   </div>
