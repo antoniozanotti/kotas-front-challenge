@@ -7,5 +7,5 @@ const props = withDefaults(defineProps<LabelProps>(), {});
 </script>
 
 <template>
-  <span class="uppercase text-center w-16 h-4">{{ label }}</span>
+  <span class="uppercase text-center w-[64px] h-[16px]">{{ label }}</span>
 </template>

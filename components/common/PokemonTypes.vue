@@ -22,7 +22,7 @@ function bgColour(label: string): string {
 </script>
 
 <template>
-  <div class="flex justify-center gap-1">
+  <div class="flex justify-center gap-[4px]">
     <UiLabel
       :class="`${bgColour(item)} text-white font-semibold text-[8px] leading-[16px] rounded-lg`"
       v-for="item in data"

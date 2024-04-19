@@ -14,7 +14,6 @@ const searchValue = ref("");
 const {
   data,
   fetchNextPage,
-  hasNextPage,
   isFetching,
   isFetchingNextPage,
   isPending,

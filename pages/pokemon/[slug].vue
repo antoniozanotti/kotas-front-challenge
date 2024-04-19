@@ -19,7 +19,7 @@ const { isPending, data } = usePokemonByNameQuery(pokemonName);
     </div>
     <NuxtLink
       to="/"
-      class="text-[#00A3FF] font-bold text-sm leading-[41px] h-[41px] w-[100px] block mx-auto text-center mt-[48px]"
+      class="text-[#00A3FF] font-bold text-[14px] leading-[41px] h-[41px] w-[100px] block mx-auto text-center mt-[48px]"
       >Voltar</NuxtLink
     >
   </div>

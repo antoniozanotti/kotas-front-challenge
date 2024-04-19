@@ -21,7 +21,7 @@ const { isPending, data } = usePokemonByNameQuery(props.name);
         height="40"
         class="mx-auto"
       />
-      <CommonTitle level="h3" class="py-4 leading-4">{{
+      <CommonTitle level="h3" class="py-[16px] leading-[16px]">{{
         data.name
       }}</CommonTitle>
       <span class="font-secondary font-bold text-[9px] leading-[12px]"
