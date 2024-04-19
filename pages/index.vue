@@ -3,7 +3,7 @@ import { onBeforeUnmount, onMounted } from "vue"
 
 // trigger fetchNextPage when window arrived at bottom
 function onScroll() {
-  if(Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+  if(Math.ceil(window.innerHeight + window.scrollY)+300 >= document.body.offsetHeight){
     fetchNextPage();
   }
 }
