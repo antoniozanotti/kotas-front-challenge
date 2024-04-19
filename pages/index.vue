@@ -1,4 +1,15 @@
 <script lang="ts" setup>
+import { useScroll } from "@vueuse/core";
+
+// trigger fetchNextPage when window arrived at bottom
+const { arrivedState } = useScroll(window);
+watch(arrivedState, (arrivedState) => {
+  if (arrivedState.bottom) {
+    fetchNextPage();
+  }
+});
+
+// search and infinite pagination logic
 const searchValue = ref("");
 const {
   data,
@@ -32,7 +43,7 @@ const {
       <UiGrid>
         <template v-for="(group, index) in data.pages" :key="index">
           <PagesListingPokemonCard
-            v-for="pokemon in (group.results ?? [group])"
+            v-for="pokemon in group.results ?? [group]"
             :key="pokemon.name"
             :name="pokemon.name"
           />
@@ -48,5 +59,4 @@ const {
       </button>
     </div>
   </div>
-  <UiScroll />
 </template>
