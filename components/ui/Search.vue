@@ -28,7 +28,7 @@ function onClickX() {
 <template>
   <form role="search" @submit.prevent="false">
     <label
-      class="bg-white border-[#E1E1E1] border-[2px] flex rounded-[50px] h-[40px] lg:h-[48px] items-center"
+      class="bg-white border-[#E1E1E1] border-[1px] flex rounded-[50px] h-[40px] lg:h-[48px] items-center"
     >
       <span :class="`w-[37px] text-center ${showSearchIcon}`">
         <img

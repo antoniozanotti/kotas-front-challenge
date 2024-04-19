@@ -9,5 +9,5 @@ const props = withDefaults(defineProps<TitleProps>(), {});
 </script>
 
 <template>
-  <component :is="level" class="font-bold text-[14px]"><slot /></component>
+  <component :is="level" class="font-bold text-[14px] capitalize"><slot /></component>
 </template>

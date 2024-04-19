@@ -21,6 +21,9 @@ const {
 </script>
 
 <template>
+  <Head>
+    <Title>Listagem de Pokémons</Title>
+  </Head>
   <div class="w-[330px] sm:w-[507px] lg:w-[829px] mx-auto">
     <UiSearch
       class="my-[19px] mx-[7px]"

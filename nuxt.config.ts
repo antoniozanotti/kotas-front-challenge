@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        class: 'bg-neutral-200',
+        class: 'bg-[#F1F4F5]',
       },
     },
   },

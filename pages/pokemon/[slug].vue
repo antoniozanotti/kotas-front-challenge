@@ -8,6 +8,9 @@ const { isPending, data } = usePokemonByNameQuery(pokemonName);
   <div class="md:w-[541px] mx-auto">
     <span v-if="isPending"></span>
     <div v-else>
+      <Head>
+        <Title>Pokémon: {{ data.name }}</Title>
+      </Head>
       <PagesPokemonHeader
         :pokemon="{ id: data.id, name: data.name, types: data.types.map((pokemonType:any) => {return pokemonType.type.name;}) }"
       />
