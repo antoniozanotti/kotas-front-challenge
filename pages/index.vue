@@ -1,23 +1,25 @@
 <script lang="ts" setup>
-import { useScroll } from "@vueuse/core";
+import { onBeforeUnmount, onMounted } from "vue"
 
 // trigger fetchNextPage when window arrived at bottom
-const { arrivedState } = useScroll(window);
-watch(arrivedState, (arrivedState) => {
-  if (arrivedState.bottom) {
+function onScroll() {
+  if(Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight){
     fetchNextPage();
   }
-});
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', onScroll)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', onScroll)
+})
 
 // search and infinite pagination logic
 const searchValue = ref("");
-const {
-  data,
-  fetchNextPage,
-  isFetching,
-  isFetchingNextPage,
-  isPending,
-} = usePokemonsInfiniteQuery(searchValue);
+const { data, fetchNextPage, isFetching, isFetchingNextPage, isPending } =
+  usePokemonsInfiniteQuery(searchValue);
 </script>
 
 <template>
