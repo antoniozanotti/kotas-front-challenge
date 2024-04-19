@@ -2,6 +2,8 @@
 
 Esse é um projeto de desafio para [Coodesh](https://coodesh.com/). Lendo os requisitos e critérios de avaliação cheguei ao resultado final que é este repositório.
 
+**Disponível em**: [https://kotas-front-challenge.netlify.app](https://kotas-front-challenge.netlify.app)
+
 **Figma Design File**: a construção do projeto seguiu o arquivo de design /design/figma.fig concedido pela Coodesh.
 
 **Tech Stack**: [Nuxt 3](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Typescript](https://www.typescriptlang.org/), [Tanstack Query](https://tanstack.com/query/latest).
@@ -114,3 +116,7 @@ bun run preview
 - public: contém assets que ficarão disponíveis pela rota /
 - nuxt.config.ts: configuração do Nuxt para as bibliotecas: @nuxtjs/google-fonts, @nuxt/image, tailwindcss. Também estilizei a cor de fundo do body por aqui.
 - tailwind.config.js: arquivo de configuração do Tailwind CSS. Configurado padrão de fontes, boxShadow, e exemplo de como poderia ser utilizado customização de cores.
+
+## Git Branches
+- main: para ambiente de desenvolvimento
+- production: para ambiente de produção, quando feito um push para production é disparado novo deploy automaticamente.
