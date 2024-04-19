@@ -49,14 +49,6 @@ const {
           />
         </template>
       </UiGrid>
-      <button
-        @click="() => fetchNextPage()"
-        :disabled="!hasNextPage || isFetchingNextPage"
-      >
-        <span v-if="isFetchingNextPage">Carregando mais...</span>
-        <span v-else-if="hasNextPage">Carregar Mais</span>
-        <span v-else></span>
-      </button>
     </div>
   </div>
 </template>
