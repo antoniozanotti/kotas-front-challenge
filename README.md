@@ -1,32 +1,32 @@
 # Front Challenge - Pokémons
 
-Esse é um projeto de desafio para [Coodesh](https://coodesh.com/). Lendo os requisitos e critérios de avaliação cheguei ao resultado final que é este repositório.
+Challenge project developed in just 3 days for the selection process for [Coodesh](https://coodesh.com/). Reading the requirements and evaluation criteria I came to the final result, which is this repository.
 
-**Disponível em**: [https://kotas-front-challenge.vercel.app/](https://kotas-front-challenge.vercel.app/)
+**Live Version**: [https://kotas-front-challenge.vercel.app/](https://kotas-front-challenge.vercel.app/)
 
-**Figma Design File**: a construção do projeto seguiu o arquivo de design /design/figma.fig concedido pela Coodesh.
+**Figma Design File**: the construction of the project followed the /design/figma.fig design file given by Coodesh.
 
 **Tech Stack**: [Nuxt 3](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Typescript](https://www.typescriptlang.org/), [Tanstack Query](https://tanstack.com/query/latest).
 
-## Pré-instalação
+## Pre-installation
 
-Você já deve ter [Node.js](https://nodejs.org) v18.0.0 ou superior instalado.
+You must already have [Node.js](https://nodejs.org) v18.0.0 or higher installed.
 
-## Instalação
+## Installation
 
-1. Clone o repositório
+1. Clone the repository
 
 ```bash
 git clone git@github.com:antoniozanotti/kotas-front-challenge.git
 ```
 
-2. Entre na pasta do projeto
+2. Go into the project folder
 
 ```bash
 cd kotas-front-challenge
 ```
 
-3. Instale as dependências
+3. Install dependencies
 
 ```bash
 # npm
@@ -42,7 +42,7 @@ yarn install
 bun install
 ```
 
-4. Você já tem tudo pronto para iniciar o servidor localmente `http://localhost:3000`
+4. You already have everything ready to start the server locally `http://localhost:3000`
 
 ```bash
 # npm
@@ -58,7 +58,7 @@ yarn dev
 bun run dev
 ```
 
-ou se quiser rodar em ambiente de produção
+or if you want to run in a production environment
 
 ```bash
 # npm
@@ -74,7 +74,7 @@ yarn build
 bun run build
 ```
 
-ou se quiser rodar o build localmente
+or if you want to run the build locally
 
 ```bash
 # npm
@@ -90,33 +90,33 @@ yarn preview
 bun run preview
 ```
 
-## Sugestões de melhorias para o arquivo de design fornecido
+## Suggestions for improvements to the provided design file
 
-- Criação de variáveis para cores, estilos de fonte, dropshadown e border radius.
-- Criação de página com guidelines.
-- Padronizar margens, paddings, line heights e border-radius.
-- Utilizar o padrão de tamanhos e cores do Tailwind CSS.
-- Criação de skeletons.
-- Criação de estado sem resultados encontrados.
-- Melhor especificação do elemento visual de scroll ou de barra fixa do topo, não ficou claro o comportamento esperado e por isso não o fiz.
+- Creation of variables for colors, font styles, dropshadown and border radius.
+- Creation of a page with guidelines.
+- Standardize margins, paddings, line heights and border-radius.
+- Use the Tailwind CSS standard sizes and colors.
+- Creation of skeletons.
+- Creation of state with no results found.
+- Better specification of the scroll or fixed bar visual element at the top, the expected behavior was not clear and that's why I didn't do it.
 
-## Estrutura de pastas e arquivos
-- assets: para imagens e estilos que não ficaram disponíveis na pasta public.
-  - css/main.css: arquivo de estilo que será incluído em toda aplicação.
-- components: armazena os componentes visuais.
-  - common: componentes presentes em mais de uma página.
-  - pages: componentes específicos de cada página.
-  - ui: componentes de interface que poderiam ser removidos deste projeto para criar uma biblioteca de componentes reutilizáveis entre projetos. Os estilos destes componentes são apenas do escopo deles e não do projeto.
-- composables: para as chamadas de api com o tanstack.
-- design: arquivos recebidos do design.
-- layouts: pasta padrão do Nuxt que permite múltiplos layouts para aplicação, mas foi utilizado apenas um.
-- pages: estrutura de rotas do Nuxt e chamada dos componentes para cada página.
-- plugins: pasta padrão do Nuxt.
-  - vue-query.ts: plugin do @tanstack/vue-query
-- public: contém assets que ficarão disponíveis pela rota /
-- nuxt.config.ts: configuração do Nuxt para as bibliotecas: @nuxtjs/google-fonts, @nuxt/image, tailwindcss. Também estilizei a cor de fundo do body por aqui.
-- tailwind.config.js: arquivo de configuração do Tailwind CSS. Configurado padrão de fontes, boxShadow, e exemplo de como poderia ser utilizado customização de cores.
+## Folder and file structure
+- assets: for images and styles that will not available in the public folder.
+  - css/main.css: style file that will be included in every application.
+- components: stores the visual components.
+  - common: components present on more than one page.
+  - pages: specific components of each page.
+  - ui: interface components that could be removed from this project to create a library of reusable components across projects. The styles of these components are only of their scope and not the project.
+- composables: for api calls with tanstack.
+- design: design files received.
+- layouts: Nuxt's default folder that allows multiple layouts for application, but only one was used.
+- pages: Nuxt route structure and component calls for each page.
+- plugins: Nuxt default folder.
+  - vue-query.ts: plugin for @tanstack/vue-query.
+- public: contains assets that will be available via the route /.
+- nuxt.config.ts: Nuxt configuration for libraries: @nuxtjs/google-fonts, @nuxt/image, tailwindcss. I also styled the background color of body here.
+- tailwind.config.js: Tailwind CSS configuration file. Configured default fonts, boxShadow, and example of how color customization could be used.
 
 ## Git Branches
-- main: para ambiente de desenvolvimento
-- production: para ambiente de produção, quando feito um push para production é disparado novo deploy automaticamente.
+- main: for development environment
+- production: For a production environment, when a push is made to production, a new deploy is automatically triggered.
