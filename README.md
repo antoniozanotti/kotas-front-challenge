@@ -1,4 +1,4 @@
-# Front Challenge - Pokémons
+# Frontend Challenge
 
 Challenge project developed in just 3 days for the selection process for [Coodesh](https://coodesh.com/). Reading the requirements and evaluation criteria I came to the final result, which is this repository.
 
